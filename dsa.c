@@ -2,6 +2,7 @@
 #define __DSA_H__
 
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "dsa.h"
 
@@ -54,7 +55,7 @@ int searchLinkedList(node_t* head, int value)
         idx++;
     }
 
-    //free(temp);
+    free(temp);
 
     return ans;
 }
