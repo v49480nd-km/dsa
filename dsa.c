@@ -38,6 +38,12 @@ node_t* pushLinkedList(node_t** head, node_t* new_node)
     return new_node;
 }
 
+void pullLinkedList(node_t** head)
+{
+    node_t* temp = *head;
+    *head = temp->next;
+}
+
 int searchLinkedList(node_t* head, int value)
 {
     node_t* temp = head;
