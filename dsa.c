@@ -7,8 +7,7 @@
 
 node_t* createNode(int value)
 {
-    node_t* node = (node_t*)malloc(sizeof(int));
-
+    node_t* node = (node_t*)malloc(sizeof(node_t));
     node->value = value;
     node->next = NULL;
 
@@ -22,11 +21,20 @@ void printLinkedList(node_t* head)
     while (temp != NULL)
     {
         printf("%d - ", temp->value);
+
         temp = temp->next;
     }
 
     putc('\n', stdout);
     free(temp);
+}
+
+node_t* pushLinkedList(node_t** head, node_t* new_node)
+{
+    new_node->next = *head;
+    *head = new_node;
+
+    return new_node;
 }
 
 int searchLinkedList(node_t* head, int value)

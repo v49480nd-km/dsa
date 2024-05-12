@@ -4,15 +4,14 @@
 
 int main(void)
 {
-    node_t* head;
-    int ans;
-    node_t* first = createNode(15);
-    node_t* third = createNode(14);
-    node_t* second = createNode(16);
+    node_t* head = NULL;
+    node_t* temp;
 
-    head = first;
-    first->next = third;
-    third->next = second;
+    for (int i = 0; i < 16; i++)
+    {
+        temp = createNode(i);
+        pushLinkedList(&head, temp);
+    }
 
     printLinkedList(head);
 
