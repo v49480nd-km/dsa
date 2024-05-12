@@ -1,6 +1,19 @@
+#ifndef __DSA_H__
+#define __DSA_H__
+
 #include <stdio.h>
 
 #include "dsa.h"
+
+node_t* createNode(int value)
+{
+    node_t* node = (node_t*)malloc(sizeof(int));
+
+    node->value = value;
+    node->next = NULL;
+
+    return node;
+}
 
 void printLinkedList(node_t* head)
 {
@@ -37,3 +50,5 @@ int searchLinkedList(node_t* head, int value)
 
     return ans;
 }
+
+#endif

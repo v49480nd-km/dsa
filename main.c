@@ -6,26 +6,15 @@ int main(void)
 {
     node_t* head;
     int ans;
-    node_t first, second, third, fourth, fifth, new_third;
+    node_t* first = createNode(15);
+    node_t* third = createNode(14);
+    node_t* second = createNode(16);
 
-    head = &first;
-    first.value = 23;
-    second.value = 47;
-    third.value = 89;
-    fourth.value = 21;
-    fifth.value = 18;
-    new_third.value = 99;
-
-    first.next = &second;
-    second.next = &new_third;
-    third.next = &fourth;
-    fourth.next = &fifth;
-    fifth.next = NULL;
-    new_third.next = &third;
+    head = first;
+    first->next = third;
+    third->next = second;
 
     printLinkedList(head);
-    ans = searchLinkedList(head, 47);
-    printf("%d\n", ans);
 
     return 0;
 }
