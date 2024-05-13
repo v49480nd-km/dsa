@@ -1,5 +1,5 @@
-#ifndef __DSA_H__
-#define __DSA_H__
+#ifndef __LINKEDLIST_H__
+#define __LINKEDLIST_H__
 
 typedef struct Node {
     int value;

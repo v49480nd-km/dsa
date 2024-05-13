@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "dsa.h"
+#include "linkedlist.h"
 
 node_t*
 createNode(int value)
