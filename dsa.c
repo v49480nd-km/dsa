@@ -30,18 +30,17 @@ void printLinkedList(node_t* head)
     free(temp);
 }
 
-node_t* pushLinkedList(node_t** head, node_t* new_node)
+void pushLinkedList(node_t** head, node_t* new_node)
 {
     new_node->next = *head;
     *head = new_node;
-
-    return new_node;
 }
 
-void pullLinkedList(node_t** head)
+node_t* pullLinkedList(node_t* head)
 {
-    node_t* temp = *head;
-    *head = temp->next;
+    head = head->next;
+
+    return head;
 }
 
 int searchLinkedList(node_t* head, int value)

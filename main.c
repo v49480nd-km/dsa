@@ -14,7 +14,7 @@ int main(void)
     }
 
     printLinkedList(head);
-    pullLinkedList(&head);
+    head = pullLinkedList(head);
     printLinkedList(head);
 
     return 0;
