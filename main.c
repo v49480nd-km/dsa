@@ -2,13 +2,13 @@
 
 #include "dsa.h"
 
-int main(void)
+int
+main(void)
 {
     node_t* head = NULL;
     node_t* temp;
 
-    for (int i = 0; i < 16; i++)
-    {
+    for (int i = 0; i < 16; i++) {
         temp = createNode(i);
         pushLinkedList(&head, temp);
     }
