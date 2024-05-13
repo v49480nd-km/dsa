@@ -1,31 +1,7 @@
-#ifndef __DSA_H__
-#define __DSA_H__
-
 #include <stdio.h>
 #include <stdlib.h>
 
 #include "dsa.h"
-
-int
-searchLinkedList(node_t *head, int value)
-{
-    node_t *temp = head;
-    int ans = 0, idx = 0;
-
-    while (temp != NULL) {
-        if (temp->value == value) {
-            ans = idx;
-            break;
-        }
-
-        temp = temp->next;
-        idx++;
-    }
-
-    free(temp);
-
-    return ans;
-}
 
 node_t*
 createNode(int value)
@@ -45,6 +21,21 @@ pullLinkedList(node_t *head)
     return head;
 }
 
+node_t*
+searchLinkedList(node_t *head, int value)
+{
+    node_t *temp = head;
+
+    while (temp != NULL) {
+        if (temp->value == value)
+            break;
+
+        temp = temp->next;
+    }
+
+    return temp;
+}
+
 void
 appendLinkedList(node_t *head, node_t *new_node)
 {
@@ -55,6 +46,18 @@ appendLinkedList(node_t *head, node_t *new_node)
     }
 
     temp->next = new_node;
+}
+
+void
+insertLinkedList(int node_value, node_t *head, node_t *new_node)
+{
+    node_t *node = searchLinkedList(head, node_value);
+
+    if (node == NULL)
+        exit(0);
+
+    new_node->next = node->next;
+    node->next = new_node;
 }
 
 void
@@ -78,5 +81,3 @@ pushLinkedList(node_t **head, node_t *new_node)
     new_node->next = *head;
     *head = new_node;
 }
-
-#endif
