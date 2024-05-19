@@ -1,3 +1,2 @@
-*.o
-main
-py/__pycache__/*
+c/build/c
+c/build/CMakeFiles
