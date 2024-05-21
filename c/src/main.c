@@ -1,39 +1,23 @@
 #include <stdio.h>
-#include <stdlib.h>
+// #include <stdlib.h>
 
-#include "linkedlist.h"
+#include "hashmap.h"
+// #include "linkedlist.h"
 
 int
 main(void)
 {
-    node_t *head = NULL;
-    node_t *temp, *temp2, *temp3;
+    Person p1 = { 15, "john" };
+    Person p2 = { 72, "johnny" };
+    Person p3 = { 37, "benny" };
+    Person p4 = { 21, "chaddington" };
+    Person p5 = { 44, "sarawithanh" };
+    Person people[5] = { p1, p2, p3, p4, p5 };
 
-    for (int i = 0; i < 16; i++) {
-        temp = createNode(i);
-        pushLinkedList(&head, temp);
+    for (int i = 0; i < 5; i++) {
+        int cur_key = hash(people[i].name);
+        printf("%s -> %d\n", people[i].name, cur_key);
     }
-
-    printLinkedList(head);
-
-    head = pullLinkedList(head);
-
-    printLinkedList(head);
-
-    temp2 = createNode(99);
-
-    appendLinkedList(head, temp2);
-    printLinkedList(head);
-
-    temp3 = createNode(44);
-
-    insertLinkedList(3, head, temp3);
-    printLinkedList(head);
-
-    free(head);
-    free(temp);
-    free(temp2);
-    free(temp3);
 
     return 0;
 }

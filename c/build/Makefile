@@ -129,6 +129,30 @@ dsa/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsa.dir/build.make CMakeFiles/dsa.dir/build
 .PHONY : dsa/fast
 
+src/hashmap.o: src/hashmap.c.o
+.PHONY : src/hashmap.o
+
+# target to build an object file
+src/hashmap.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsa.dir/build.make CMakeFiles/dsa.dir/src/hashmap.c.o
+.PHONY : src/hashmap.c.o
+
+src/hashmap.i: src/hashmap.c.i
+.PHONY : src/hashmap.i
+
+# target to preprocess a source file
+src/hashmap.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsa.dir/build.make CMakeFiles/dsa.dir/src/hashmap.c.i
+.PHONY : src/hashmap.c.i
+
+src/hashmap.s: src/hashmap.c.s
+.PHONY : src/hashmap.s
+
+# target to generate assembly for a file
+src/hashmap.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsa.dir/build.make CMakeFiles/dsa.dir/src/hashmap.c.s
+.PHONY : src/hashmap.c.s
+
 src/linkedlist.o: src/linkedlist.c.o
 .PHONY : src/linkedlist.o
 
@@ -186,6 +210,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... dsa"
+	@echo "... src/hashmap.o"
+	@echo "... src/hashmap.i"
+	@echo "... src/hashmap.s"
 	@echo "... src/linkedlist.o"
 	@echo "... src/linkedlist.i"
 	@echo "... src/linkedlist.s"

@@ -4,11 +4,15 @@ project(dsa
     LANGUAGES C
 )
 
-add_executable(${PROJECT_NAME}
+set(SOURCES
     src/main.c
+    src/hashmap.c
+    src/hashmap.h
     src/linkedlist.c
     src/linkedlist.h
 )
+
+add_executable(${PROJECT_NAME} ${SOURCES})
 
 target_compile_features(${PROJECT_NAME} PRIVATE c_std_17)
 
