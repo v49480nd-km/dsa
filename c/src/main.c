@@ -4,20 +4,22 @@
 #include "hashmap.h"
 // #include "linkedlist.h"
 
-int
-main(void)
-{
-    Person p1 = { 15, "john" };
-    Person p2 = { 72, "johnny" };
-    Person p3 = { 37, "benny" };
-    Person p4 = { 21, "chaddington" };
-    Person p5 = { 44, "sarawithanh" };
-    Person people[5] = { p1, p2, p3, p4, p5 };
-
-    for (int i = 0; i < 5; i++) {
-        int cur_key = hash(people[i].name);
-        printf("%s -> %d\n", people[i].name, cur_key);
-    }
+int main(void) {
+    Person p1 = { 15, "john", NULL };
+    Person p2 = { 72, "johnny", NULL };
+    Person p3 = { 37, "benny", NULL };
+    Person p4 = { 21, "bungle", NULL };
+    Person p5 = { 44, "sarawithanh", NULL };
+    Person *buckets[MAX_LIST];
+    
+    initBuckets(buckets);
+    printBuckets(buckets);
+    insertHash(&p1, buckets);
+    insertHash(&p2, buckets);
+    insertHash(&p3, buckets);
+    insertHash(&p4, buckets);
+    insertHash(&p5, buckets);
+    printBuckets(buckets);
 
     return 0;
 }

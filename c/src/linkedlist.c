@@ -3,27 +3,19 @@
 
 #include "linkedlist.h"
 
-node_t*
-createNode(int value)
-{
+node_t* createNode(int value) {
     node_t *node = (node_t*)malloc(sizeof(node_t));
     node->value = value;
     node->next = NULL;
-
     return node;
 }
 
-node_t*
-pullLinkedList(node_t *head)
-{
+node_t* pullLinkedList(node_t *head) {
     head = head->next;
-
     return head;
 }
 
-node_t*
-searchLinkedList(node_t *head, int value)
-{
+node_t* searchLinkedList(node_t *head, int value) {
     node_t *temp = head;
 
     while (temp != NULL) {
@@ -36,9 +28,7 @@ searchLinkedList(node_t *head, int value)
     return temp;
 }
 
-void
-appendLinkedList(node_t *head, node_t *new_node)
-{
+void appendLinkedList(node_t *head, node_t *new_node) {
     node_t *temp = head;
 
     while (temp->next != NULL) {
@@ -48,9 +38,7 @@ appendLinkedList(node_t *head, node_t *new_node)
     temp->next = new_node;
 }
 
-void
-insertLinkedList(int node_value, node_t *head, node_t *new_node)
-{
+void insertLinkedList(int node_value, node_t *head, node_t *new_node) {
     node_t *node = searchLinkedList(head, node_value);
 
     if (node == NULL)
@@ -60,14 +48,11 @@ insertLinkedList(int node_value, node_t *head, node_t *new_node)
     node->next = new_node;
 }
 
-void
-printLinkedList(node_t *head)
-{
+void printLinkedList(node_t *head) {
     node_t *temp = head;
 
     while (temp != NULL) {
         printf("%d - ", temp->value);
-
         temp = temp->next;
     }
 
@@ -75,9 +60,7 @@ printLinkedList(node_t *head)
     free(temp);
 }
 
-void
-pushLinkedList(node_t **head, node_t *new_node)
-{
+void pushLinkedList(node_t **head, node_t *new_node) {
     new_node->next = *head;
     *head = new_node;
 }
