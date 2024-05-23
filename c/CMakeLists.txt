@@ -6,6 +6,8 @@ project(dsa
 
 set(SOURCES
     src/main.c
+    src/array.c
+    src/array.h
     src/hashmap.c
     src/hashmap.h
     src/linkedlist.c

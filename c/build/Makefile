@@ -129,6 +129,30 @@ dsa/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsa.dir/build.make CMakeFiles/dsa.dir/build
 .PHONY : dsa/fast
 
+src/array.o: src/array.c.o
+.PHONY : src/array.o
+
+# target to build an object file
+src/array.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsa.dir/build.make CMakeFiles/dsa.dir/src/array.c.o
+.PHONY : src/array.c.o
+
+src/array.i: src/array.c.i
+.PHONY : src/array.i
+
+# target to preprocess a source file
+src/array.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsa.dir/build.make CMakeFiles/dsa.dir/src/array.c.i
+.PHONY : src/array.c.i
+
+src/array.s: src/array.c.s
+.PHONY : src/array.s
+
+# target to generate assembly for a file
+src/array.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dsa.dir/build.make CMakeFiles/dsa.dir/src/array.c.s
+.PHONY : src/array.c.s
+
 src/hashmap.o: src/hashmap.c.o
 .PHONY : src/hashmap.o
 
@@ -210,6 +234,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... dsa"
+	@echo "... src/array.o"
+	@echo "... src/array.i"
+	@echo "... src/array.s"
 	@echo "... src/hashmap.o"
 	@echo "... src/hashmap.i"
 	@echo "... src/hashmap.s"
