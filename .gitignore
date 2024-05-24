@@ -1,2 +1,4 @@
 c/build/c
 c/build/CMakeFiles
+c/src/*.h
+c/src/main.c
