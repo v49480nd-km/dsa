@@ -10,9 +10,11 @@ typedef struct Person {
     struct Person *next;
 } Person;
 
+
 int hash(char name[MAX_NAME]);
-void initBuckets(Person *buckets[MAX_LIST]);
-void printBuckets(Person *buckets[MAX_LIST]);
-void insertHash(Person *p, Person *buckets[MAX_LIST]);
+void pushPerson(Person **head, Person *p);
+void initBuckets(Person *buckets[]);
+void printBuckets(Person *buckets[]);
+void insertHash(Person *p, Person *buckets[]);
 
 #endif

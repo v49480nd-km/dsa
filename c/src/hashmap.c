@@ -3,13 +3,13 @@
 
 #include "hashmap.h"
 
-void initBuckets(Person *buckets[MAX_LIST]) {
+void initBuckets(Person *buckets[]) {
     for (int i = 0; i <  MAX_LIST; i++) {
         buckets[i] = NULL;
     }
 }
 
-void printBuckets(Person *buckets[MAX_LIST]) {
+void printBuckets(Person *buckets[]) {
     for (int i = 0; i < MAX_LIST; i++) {
         if (buckets[i] == NULL) {
             printf("%d => ---\n", i+1);
@@ -35,12 +35,17 @@ int hash(char name[MAX_NAME]) {
     return (key % MAX_LIST);
 }
 
-void insertHash(Person *p, Person *buckets[MAX_LIST]) {
-    int key = hash(p->name);
+void pushPerson(Person **head, Person *p) {
+    p->next = *head;
+}
 
-    if (buckets[key] == NULL) {
-        buckets[key] = p;
+void insertHash(Person *p, Person *buckets[]) {
+    int key = hash(p->name);
+    Person **temp = &buckets[key];
+
+    if (buckets[key] != NULL) {
+        pushPerson(temp, p);
     } else {
-        buckets[key]->next = p;
+        buckets[key] = p;
     }
 }
