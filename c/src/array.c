@@ -17,6 +17,54 @@ int bSearch(int arr[], const int SIZE, const int VALUE) {
     return -1;
 }
 
+int jumpSearch(int arr[], const int VALUE) {
+    int jump = 3;
+    int low = 0, high = jump;
+
+    while (arr[low] <= VALUE) {
+        if (VALUE > arr[high]) {
+            jump++;
+            low += jump;
+            high += jump;
+        } 
+
+        if (arr[low] > VALUE) {
+            break;
+        }
+
+        for (int i = low; i < high; i++) {
+            if (arr[i] == VALUE) {
+                return i;
+            }
+        }
+    }
+    return -1;
+}
+
+int linearSearch(int arr[], const int SIZE, const int VALUE) {
+    for (int i = 0; i < SIZE; i++) {
+        if (arr[i] == VALUE) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+int sentinelSearch(int arr[], const int SIZE, const int VALUE) {
+    int i = 0, last = arr[SIZE - 1];
+    arr[SIZE - 1] = VALUE;
+
+    while (arr[i] != VALUE) {
+        i++;
+    }
+    arr[SIZE - 1] = last;
+
+    if ((i < SIZE - 1) || arr[SIZE - 1] == VALUE) {
+        return i;
+    }
+    return -1;
+}
+
 void printArray(int arr[], const int SIZE) {
     for (int i = 0; i < SIZE; i++) {
         printf("%d, ", arr[i]);
