@@ -2,6 +2,7 @@
 
 #include "array.h"
 
+// SEARCHING
 int bSearch(int arr[], const int SIZE, const int VALUE) {
     int start = 0, end = SIZE - 1, mid;
     while (start <= end) {
@@ -65,6 +66,37 @@ int sentinelSearch(int arr[], const int SIZE, const int VALUE) {
     return -1;
 }
 
+// SORTING
+void bubbleSort(int arr[], const int SIZE) {
+    for (int i = 0; i < SIZE; i++) {
+        for (int j = i + 1; j < SIZE; j++) {
+            if (arr[i] > arr[j]) {
+                swap(&arr[i], &arr[j]);
+            }
+        }
+    }
+}
+
+void selectSort(int arr[], const int SIZE) {
+    /* find the min element
+     * swap with the first element
+     * find next smallest swap with 
+     * second element
+     */
+    int min;
+    for (int i = 0; i < SIZE - 1; i++) {
+        min = i;
+        for (int j = i; j < SIZE; j++) {
+            if (arr[j] < arr[min]) { // lol ray j
+                min = j;
+            }
+        }
+
+        swap(&arr[min], &arr[i]);
+    }
+}
+
+// RANDOM
 void printArray(int arr[], const int SIZE) {
     for (int i = 0; i < SIZE; i++) {
         printf("%d, ", arr[i]);
@@ -81,4 +113,10 @@ void reverseArray(int arr[], const int SIZE) {
         start++;
         end--;
     }
+}
+
+void swap(int *a, int *b) {
+    int *tmp = a;
+    *a = *b;
+    *b = *tmp;
 }
