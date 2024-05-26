@@ -78,11 +78,6 @@ void bubbleSort(int arr[], const int SIZE) {
 }
 
 void selectSort(int arr[], const int SIZE) {
-    /* find the min element
-     * swap with the first element
-     * find next smallest swap with 
-     * second element
-     */
     int min;
     for (int i = 0; i < SIZE - 1; i++) {
         min = i;
@@ -116,7 +111,7 @@ void reverseArray(int arr[], const int SIZE) {
 }
 
 void swap(int *a, int *b) {
-    int *tmp = a;
+    int tmp = *a;
     *a = *b;
-    *b = *tmp;
+    *b = tmp;
 }
