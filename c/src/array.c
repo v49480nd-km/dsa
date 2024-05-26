@@ -77,6 +77,16 @@ void bubbleSort(int arr[], const int SIZE) {
     }
 }
 
+void insertionSort(int arr[], const int SIZE) {
+    for (int i = 1; i < SIZE; i++) {
+        for (int j = 0; j < SIZE; j++) {
+            if (arr[i] < arr[j]) {
+                swap(&arr[i], &arr[j]);
+            }
+        }
+    }
+}
+
 void selectSort(int arr[], const int SIZE) {
     int min;
     for (int i = 0; i < SIZE - 1; i++) {
